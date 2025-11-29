@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills I'm Developing</title>
+
+<!-- Fonts for Header + Navigation -->
+<link href="https://fonts.googleapis.com/css2?family=Aurora+Script&family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="galaxy-field"></div>
+
+<header>
+    <h1>JEWORLD</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+
+        <li class="dropdown">
+            <a href="#" class="dropbtn">ABOUT</a>
+            <div class="dropdown-content">
+                <a href="skills.html">Skills I'm Developing</a>
+                <a href="goals.html">My Goals as a Student</a>
+                <a href="funfacts.html">Fun Facts About Me</a>
+            </div>
+        </li>
+
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+
+        <!-- LOGOUT BUTTON (just keep the class name) -->
+        <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+    </ul>
+</nav>
+
+<section id="section2"></section>
+
+<section id="drop">
+
+    <h2 style="color: white; font-size: 30px; text-align: center;">Skills I'm Building</h2>
+    <p>Driven by curiosity, I’m building a diverse skill set that highlights my strengths in technology and beyond.</p>
+
+    <section id="skills">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'GameDevelopmentandDesign')">Game Development and Design</button>
+            <button class="tablinks" onclick="openTab(event, 'GraphicDesign')">Graphic Design</button>
+            <button class="tablinks" onclick="openTab(event, 'SoftSkills')">Soft Skills</button>
+            <button class="tablinks" onclick="openTab(event, 'ProblemSolving')">Problem Solving</button>
+        </div>
+
+        <div id="GameDevelopmentandDesign" class="tabcontent">
+            <h3>Game Development & Design</h3>
+            <ul>
+                <li>Designing characters, stories, and realms inspired by my own fantasy visions. </li>
+                <li>To make<strong> ART</strong> you can walk through.</li>
+                <li>Making fantasies into realities through technology.</li>
+            </ul>
+        </div>
+
+        <div id="GraphicDesign" class="tabcontent" style="display:none;">
+            <h3>Graphic Design</h3>
+            <ul>
+                <li>Blending design with web development to craft a digital presence that is uniquely <strong>mine</strong>.</li>
+                <li>Mastering branding, layout, and digital illustration techniques.</li>
+                <li>Turning ideas into digital creations</li>
+            </ul>
+        </div>
+
+        <div id="SoftSkills" class="tabcontent" style="display:none;">
+            <h3>Soft Skills</h3>
+            <ul>
+                <li>Growing collaboration abilities to turn shared visions into reality.</li>
+                <li>Developing soft skills to build genuine and meaningful connections.</li>
+                <li>Practicing discipline to support consistent growth and creativity.</li>
+            </ul>
+        </div>
+
+        <div id="ProblemSolving" class="tabcontent" style="display:none;">
+            <h3>Problem Solving</h3>
+            <ul>
+                <li>Developing a systematic approach to solving complex problems.</li>
+                <li>Strengthening analytical thinking through coding challenges and hands-on projects.</li>
+                <li>Prioritizing efficient solutions and streamlining workflows in web development.</li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 Jelord Cadapan. All rights reserved.</p>
+</footer>
+<div class="footer-divider"></div>
+
+<!-- JavaScript -->
+<script>
+function openTab(evt, tabName) {
+    const tabcontents = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].style.display = "none";
+    }
+
+    const tablinks = document.getElementsByClassName("tablinks");
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+
+// Show first tab on load
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.tablinks').click();
+});
+</script>
+
+<script>
+// Make logout work on ANY PAGE
+const logoutBtn = document.querySelector('.logout-button');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', confirmLogout);
+}
+
+// Logout function
+function confirmLogout() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+
+    if (confirmLogout) {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'login.html';
+    }
+}
+</script>
+
+</body>
+</html>

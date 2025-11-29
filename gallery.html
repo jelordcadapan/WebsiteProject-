@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Personal Website</title>
+<!-- Fonts for Header + Navigation -->
+<link href="https://fonts.googleapis.com/css2?family=Aurora+Script&family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- ICONS FIX -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* Lightbox overlay */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.92);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 70vh;
+    border-radius: 12px;
+    animation: zoom 0.3s ease-in-out;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Caption */
+#lightboxCaption {
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+/* Interaction Panel */
+#interactionPanel {
+    text-align: left;
+    width: 85%;
+    max-width: 500px;
+    margin: 20px auto;
+    color: white;
+    padding: 10px;
+}
+
+#interactionPanel button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#commentList li {
+    background: rgba(255,255,255,0.12);
+    margin-top: 6px;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+/* Social icons */
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons i {
+    font-size: 40px;
+    margin: 0 12px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    transform: scale(1.25);
+}
+</style>
+
+</head>
+<body>
+
+<div class="galaxy-field"></div>
+
+<header>
+<h1>JEWORLD</h1>
+</header>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+
+<li class="dropdown">
+<a href="#" class="dropbtn">ABOUT</a>
+<div class="dropdown-content">
+<a href="skills.html">Skills I'm Developing</a>
+<a href="goals.html">My Goals as a Student</a>
+<a href="funfacts.html">Fun Facts About Me</a>
+</div>
+</li>
+
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+<a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+</ul>
+</nav>
+
+<section id="section2"></section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<p style="text-align:center;">Check out some of my travels:</p>
+
+<div class="gallery">
+
+<div class="gallery-item">
+    <img src="gal1.jpeg" class="thumbnail" data-index="0">
+    <p class="image-description">⚲ Dumagat Cold Spring, Pandan, Antique</p>
+</div>
+
+<div class="gallery-item">
+    <img src="gal2.jpeg" class="thumbnail" data-index="1">
+    <p class="image-description">⚲ Malalison Island, Culasi, Antique</p>
+</div>
+
+<div class="gallery-item">
+    <img src="gal3.jpeg" class="thumbnail" data-index="2">
+    <p class="image-description">Summertime <br>𖤓 ｡𖦹°‧ ⋆☀︎</p>
+</div>
+
+<div class="gallery-item">
+    <img src="gal4.jpeg" class="thumbnail" data-index="3">
+    <p class="image-description">Ati-Atihan Festival <br>⚲ Kalibo, Aklan</p>
+</div>
+
+<div class="gallery-item">
+    <img src="gal5.jpeg" class="thumbnail" data-index="4">
+    <p class="image-description">⚲ Coop. Ocean View Resort, Barbaza, Antique</p>
+</div>
+
+<div class="gallery-item">
+    <img src="gal6.jpeg" class="thumbnail" data-index="5">
+    <p class="image-description">Sea la vie <br>‧₊˚𓆉𓇼</p>
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+<span class="close" onclick="closeLightbox()">&times;</span>
+
+<img id="lightboxImage" class="lightbox-content">
+
+<p id="lightboxCaption"></p>
+
+<div id="interactionPanel">
+    <p><b>♡ ︎ Likes:</b> <span id="likeCount">0</span></p>
+    <button onclick="likeImage()">Like ♡ ︎</button>
+
+    <p style="margin-top:15px;"><b>✉︎ Comments:</b></p>
+    <ul id="commentList"></ul>
+
+    <textarea id="commentInput" placeholder="Write a comment..." 
+    style="width:100%;margin-top:10px;border-radius:5px;padding:8px;"></textarea>
+
+    <button onclick="submitComment()" style="margin-top:10px;">Post Comment</button>
+</div>
+</div>
+
+</section>
+
+<!-- SOCIAL ICONS FIXED -->
+<div class="social-icons">
+    <a href="https://instagram.com/jevvorlds" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com/in/YOURUSERNAME" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="mailto:jelordcadapan1@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+</div>
+
+<footer class="footer">
+<p>&copy; 2025 Jelord Cadapan. All rights reserved.</p>
+</footer>
+
+<div class="footer-divider"></div>
+
+<!-- JAVASCRIPT -->
+<script>
+// Logout
+function confirmLogout() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'login.html';
+    }
+}
+
+// Captions
+let captions = [
+    "Dumagat Cold Spring, Pandan, Antique",
+    "Malalison Island, Culasi, Antique",
+    "Summertime ☀︎",
+    "Ati-Atihan Festival, Kalibo Aklan",
+    "Coop. Ocean View Resort, Barbaza, Antique",
+    "Sea La Vie 🌊"
+];
+
+let currentIndex = 0;
+const thumbnails = document.querySelectorAll(".thumbnail");
+
+// Load saved data
+let imageData = JSON.parse(localStorage.getItem("galleryData")) || [
+    {likes:0, comments:[]},
+    {likes:0, comments:[]},
+    {likes:0, comments:[]},
+    {likes:0, comments:[]},
+    {likes:0, comments:[]},
+    {likes:0, comments:[]}
+];
+
+// Open image
+thumbnails.forEach(img => {
+    img.addEventListener("click", () => {
+        currentIndex = parseInt(img.dataset.index);
+        openImage();
+    });
+});
+
+function openImage() {
+    document.getElementById("lightbox").style.display = "block";
+    document.getElementById("lightboxImage").src = thumbnails[currentIndex].src;
+    document.getElementById("lightboxCaption").innerText = captions[currentIndex];
+    updatePanel();
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+// Update like/comment panel
+function updatePanel() {
+    document.getElementById("likeCount").innerText = imageData[currentIndex].likes;
+
+    let list = document.getElementById("commentList");
+    list.innerHTML = "";
+    imageData[currentIndex].comments.forEach(c => {
+        let li = document.createElement("li");
+        li.textContent = c;
+        list.appendChild(li);
+    });
+}
+
+// Save to storage
+function saveData() {
+    localStorage.setItem("galleryData", JSON.stringify(imageData));
+}
+
+// Like
+function likeImage() {
+    imageData[currentIndex].likes++;
+    saveData();
+    updatePanel();
+}
+
+// Comment
+function submitComment() {
+    let c = document.getElementById("commentInput").value.trim();
+    if (c !== "") {
+        imageData[currentIndex].comments.push(c);
+        saveData();
+        document.getElementById("commentInput").value = "";
+        updatePanel();
+    }
+}
+
+// Swipe left/right
+let touchStart = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+    touchStart = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+    let dx = e.changedTouches[0].clientX - touchStart;
+
+    if (dx > 50) {
+        currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+        openImage();
+    }
+    if (dx < -50) {
+        currentIndex = (currentIndex + 1) % thumbnails.length;
+        openImage();
+    }
+});
+</script>
+
+</body>
+</html>

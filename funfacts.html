@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Facts About Me</title>
+<!-- Fonts for Header + Navigation -->
+<link href="https://fonts.googleapis.com/css2?family=Aurora+Script&family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="galaxy-field"></div>
+
+<header>
+<h1>JEWORLD</h1>
+</header>
+<nav>
+<ul>
+    <li><a href="index.html">HOME</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">ABOUT</a>
+        <div class="dropdown-content">
+            <a href="skills.html">Skills I'm Developing</a>
+            <a href="goals.html">My Goals as a Student</a>
+            <a href="funfacts.html">Fun Facts About Me</a>
+        </div>
+    </li>
+    <li><a href="gallery.html">GALLERY</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+    <li><a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a></li>
+</ul>
+</nav>
+
+<section id="section2"></section>
+<section id="drop">
+<h2 style="color: white;">Fun Facts About Me</h2>
+<p>Hey there! 
+This corner of my world holds the little things that make life glow — the hum of creativity, the pull of distant skies, and the calm of endless horizons. Here you’ll catch glimpses of my passions: coding constellations into existence, exploring new places that spark wonder, and chasing inspiration in every form. Every detail you see here is a piece of my story, quiet, colorful, and a little bit cosmic. </p>
+
+<div class="funfact-container">
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Music</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>Favorite genre: RNB<br>Favorite artist: Ariana Grande</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Enthusiast</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>The first KPop group I stan was EXO.</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Scientist</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>My favorite subject of all time is Science.</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Hermit</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>A popular loner; underated yet iconic.</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="funfact-container">
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Traveller</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>Trips, parties & adventures</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Star</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>Childhood dream: Astronaut</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Prodigy</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p> The first-to-be-born-alive</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+  <div class="funfact-card" onclick="this.classList.toggle('flip')">
+    <div class="funfact-inner">
+      <div class="funfact-front">
+        <p>The Favorite</p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+      <div class="funfact-back">
+        <p>Blueberry chessecake & flans
+        </p>
+        <span class="sparkles">✧ ✦ ✧</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+function confirmLogout() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        localStorage.removeItem('isLoggedIn'); 
+        window.location.href = 'login.html';
+    }
+}
+</script>
+
+<footer class="footer">
+<p>&copy; 2025 Jelord Cadapan. All rights reserved.</p>
+</footer>
+<div class="footer-divider"></div>
+</body>
+</html>

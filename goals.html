@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Goals as a Student</title>
+<!-- Fonts for Header + Navigation -->
+<link href="https://fonts.googleapis.com/css2?family=Aurora+Script&family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="galaxy-field"></div>
+
+    <!-- Your existing content starts below -->
+
+<header>
+<h1>JEWORLD</h1>
+</header>
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li class="dropdown">
+<a href="#" class="dropbtn">ABOUT</a>
+<div class="dropdown-content">
+<a href="skills.html">Skills I'm Developing</a>
+<a href="goals.html">My Goals as a Student</a>
+<a href="funfacts.html">Fun Facts About Me</a>
+</div>
+</li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+<!-- Fixed logout button -->
+<li><a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a></li>
+</ul>
+</nav>
+
+<section id="section2"></section>
+<section id="drop">
+<h2 style="color: white; font-size: 30px; text-align: center;">My Academic Goals</h2>
+<p style="text-align: center;">Here are the aspirations I’m passionately pursuing!</p>
+<div class="goal-grid">
+<div class="goal-card" onclick="toggleGoalDetails(1)">
+<div class="goal-header" style="background-color: #F0D14D;"><strong>Short-Term Goals</strong></div>
+<p><strong>Enhance my web development and networking skills.</strong></p>
+<div class="goal-details" id="goal1-details">
+<p>By committing to these short-term goals, I know I’ll continue improving my web development abilities and set a strong base for my future path in tech. And by connecting with people in the industry, I can open more doors and create a reputation that helps me stand out.</p>
+</div>
+</div>
+
+<div class="goal-card" onclick="toggleGoalDetails(1)">
+<div class="goal-header" style="background-color: teal;"><strong>Long-Term Goals</strong></div>
+<p>Become stable and successful while enjoying life. </p>
+<div class="goal-details" id="goal2-details">
+<p>By defining these long-term goals, I inspire myself to stay aligned with the flow of life while putting in the effort and discipline needed to achieve them.
+</p>
+</div>
+</div>
+
+<div class="goal-card" onclick="toggleGoalDetails(2)">
+<div class="goal-header" style="background-color: teal;"><strong>Personal Development</strong></div>
+<p>Investing in Myself: My Personal Development Journey</p>
+<div class="goal-details" id="goal3-details">
+<p>I strive to grow as a versatile individual, equipped to tackle challenges and make a difference both personally and professionally.</p>
+</div>
+</div>
+
+<div class="goal-card" onclick="toggleGoalDetails(2)">
+<div class="goal-header" style="background-color: #F0D14D;"><strong>Career Goals</strong></div>
+<p>I am committed to pursuing a professional path guided by clearly defined goals that resonate with my interests and ambitions.</p>
+<div class="goal-details" id="goal4-details">
+<p>I aim to move into a role where I can take charge, support a team’s growth, and ensure that our projects reach their full potential. I’m working on strengthening my leadership abilities by gaining real experience and stepping up whenever there’s a chance to lead. I also want to build a strong and effective leadership style that motivates and guides others.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<p>&copy; 2025 Jelord Cadapan. All rights reserved.</p>
+</footer>
+<div class="footer-divider"></div>
+
+<!-- Embedded JavaScript -->
+<script>
+// Function to toggle details for both cards in a row
+function toggleGoalDetails(group) {
+    const details1 = document.getElementById('goal' + (group * 2 - 1) + '-details');
+    const details2 = document.getElementById('goal' + (group * 2) + '-details');
+    // Toggle visibility for the paired goals
+    details1.classList.toggle('active');
+    details2.classList.toggle('active');
+}
+
+// Logout function with confirmation
+function confirmLogout() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        // Remove any login-related keys from localStorage
+        localStorage.removeItem('isLoggedIn');
+        // Redirect to the login page
+        window.location.href = 'login.html';
+    }
+    // If the user cancels, do nothing
+}
+</script>
+</body>
+</html>

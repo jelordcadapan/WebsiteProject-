@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<div class="galaxy-field"></div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Personal Website</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Aurora+Script&family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>JEWORLD</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html" class="nav-button">HOME</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn nav-button">ABOUT</a>
+      <div class="dropdown-content">
+        <a href="skills.html">Skills I'm Developing</a>
+        <a href="goals.html">My Goals as a Student</a>
+        <a href="funfacts.html">Fun Facts About Me</a>
+      </div>
+    </li>
+    <li><a href="gallery.html" class="nav-button">GALLERY</a></li>
+    <li><a href="contact.html" class="nav-button">CONTACT</a></li>
+    <li><a href="javascript:void(0);" class="logout-button nav-button" onclick="confirmLogout()">LOG OUT</a></li>
+  </ul>
+</nav>
+
+<section id="section2"></section>
+
+<div class="slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="img1.jpeg" alt="Image 1">
+    </div>
+
+    <div class="slide">
+      <img src="img2.jpeg" alt="Image 2">
+      <div class="text-overlay">
+        <h1>✧ ✦ ✧<br> Welcome to my Website<br>✧ ✦ ✧</h1>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="img3.jpeg" alt="Image 3">
+    </div>
+  </div>
+</div>
+
+<section id="drop">
+<h2 style="color: white;">Fun Facts About Me</h2>
+  <p>Step into my world of fun facts—Here, I share the things I love, what drives me, and the little quirks that make me…me.</p>
+
+  <div class="funfact-container">
+
+    <div class="funfact-card" onclick="this.classList.toggle('flip')">
+      <div class="funfact-inner">
+        <div class="funfact-front">
+          <p>♡︎</p>
+          <span class="sparkles">✧ ✦ ✧</span>
+        </div>
+        <div class="funfact-back">
+          <p>I love my family, dearly.</p>
+          <span class="sparkles">✨</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="funfact-card" onclick="this.classList.toggle('flip')">
+      <div class="funfact-inner">
+        <div class="funfact-front">
+          <p>☆</p>
+          <span class="sparkles">✧ ✦ ✧</span>
+        </div>
+        <div class="funfact-back">
+          <p>My star sign is Aquarius.</p>
+          <span class="sparkles">✨</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="funfact-card" onclick="this.classList.toggle('flip')">
+      <div class="funfact-inner">
+        <div class="funfact-front">
+          <p>꩜</p>
+          <span class="sparkles">✧ ✦ ✧</span>
+        </div>
+        <div class="funfact-back">
+          <p>I am a fan of art & stars.</p>
+          <span class="sparkles">✨</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="funfact-card" onclick="this.classList.toggle('flip')">
+      <div class="funfact-inner">
+        <div class="funfact-front">
+          <p>🜸</p>
+          <span class="sparkles">✧ ✦ ✧</span>
+        </div>
+        <div class="funfact-back">
+          <p>Dreamt of being an Astronaut.</p>
+          <span class="sparkles">✨</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="see-more-container">
+    <a href="funfacts.html" class="see-more-button">See More Funfacts</a>
+  </div>
+</section>
+
+<div class="container">
+  <div class="image-section">
+    <img src="jelord.jpeg" alt="Jelord's Image">
+  </div>
+
+  <div class="quote-section">
+<h1 style="text-align: center; font-size: 48px; margin-bottom: 20px;">
+  <!-- Hi, I'm plain white with teal outline -->
+  <span style="
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff; 
+    -webkit-text-stroke: 2px #00695c; 
+    text-stroke: 2px #00695c;
+  ">Hi, I am </span>
+  
+  <!-- Jelord! sparkling white -->
+  <span style="
+    font-family: 'Aurora Script', cursive; 
+    color: #ffffff;
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 15px #b8f0ff,
+      0 0 20px #b8f0ff;
+    animation: sparkle 2s infinite alternate;
+  ">Jelord!</span>
+</h1>
+
+<!-- Sparkle Animation -->
+<style>
+@keyframes sparkle {
+  0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #b8f0ff, 0 0 20px #b8f0ff; }
+  50% { text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff, 0 0 24px #b8f0ff, 0 0 32px #b8f0ff; }
+  100% { text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #b8f0ff, 0 0 20px #b8f0ff; }
+}
+</style>
+
+    <p>A Starry-eyed Aquarius exploring the cosmos of creativity and code. Lover of planets, stars, and the magic of the universe. I bring imagination to life through art, painting, and all things beauty, while navigating the digital world as an Information Technology student.
+    Mystic at heart, artist in action, tech in mind—forever exploring and creating.
+    </p>
+
+    <blockquote>
+      "To be a star, you must burn."
+    </blockquote>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 Jelord Cadapan. All rights reserved.</p>
+</footer>
+<div class="footer-divider"></div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close" onclick="event.stopPropagation(); closeLightbox()">&times;</span>
+  <img class="lightbox-content" id="lightboxImage" src="">
+</div>
+
+<!-- SLIDER SCRIPT -->
+<script>
+const slides = document.querySelector('.slides');
+let index = 0;
+
+function showNextSlide() {
+    index = (index + 1) % 3;
+    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+}
+setInterval(showNextSlide, 3000);
+
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    lightboxImage.src = imageSrc;
+    lightbox.style.display = 'block';
+    document.querySelector('header').style.display = 'none';
+    document.querySelector('nav').style.display = 'none';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.querySelector('header').style.display = 'block';
+    document.querySelector('nav').style.display = 'flex';
+}
+</script>
+
+<!-- LOGOUT SCRIPT -->
+<script>
+function confirmLogout() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        localStorage.removeItem('isLoggedIn');
+        alert("You have successfully logged out!");
+        window.location.href = 'login.html';
+    }
+}
+</script>
+
+</body>
+</html>
